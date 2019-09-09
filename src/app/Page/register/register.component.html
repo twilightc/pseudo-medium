@@ -1,0 +1,42 @@
+<div class="example-container">
+  <mat-form-field hintLabel="Max 10 characters" class="w50">
+    <input
+      matInput
+      #input
+      maxlength="10"
+      placeholder="Account"
+      [(ngModel)]="RegisterModel.Account"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="w50">
+    <input
+      matInput
+      #input
+      placeholder="Password"
+      [(ngModel)]="RegisterModel.Password"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="w50">
+    <input
+      matInput
+      #input
+      placeholder="E-mail"
+      [(ngModel)]="RegisterModel.Email"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="w50">
+    <input
+      matInput
+      #input
+      placeholder="username"
+      [(ngModel)]="RegisterModel.Username"
+    />
+  </mat-form-field>
+
+  <div>
+    <button mat-stroked-button (click)="register()">Register</button>
+  </div>
+</div>

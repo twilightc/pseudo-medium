@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="example-container">
+  <mat-form-field hintLabel="Max 10 characters" class="w50">
+    <input
+      matInput
+      #input
+      [(ngModel)]="AccountModel.Account"
+      placeholder="Account"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="w50">
+    <input
+      matInput
+      #input
+      [(ngModel)]="AccountModel.Password"
+      placeholder="Password"
+    />
+  </mat-form-field>
+
+  <div>
+    <button mat-stroked-button (click)="Login()">Login</button>
+  </div>
+</div>
