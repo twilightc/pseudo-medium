@@ -16,10 +16,10 @@ export class RegisterComponent implements OnInit {
 
   register(): void {
     this.registerservice.Register(this.RegisterModel).subscribe(response => {
-      console.log('x:', response);
-      console.log('x:', response.success);
+      // console.log('x:', response);
+      // console.log('x:', response.success);
       if (response.success) {
-        console.log('yyyyyy');
+        // console.log('yyyyyy');
         this.registerservice.isLoggedIn = true;
         localStorage.setItem('token', response.data);
         // UserService.JWTToken = response.data;

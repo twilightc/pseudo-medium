@@ -11,13 +11,17 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './Page/register/register.component';
 import { ProfileComponent } from './Page/profile/profile.component';
 import { AuthGuard } from './Services/authGuard.service';
+import { MainComponent } from './Page/main/main.component';
+import { HeaderComponent } from './Page/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    MainComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
