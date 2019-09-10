@@ -13,6 +13,8 @@ import { ProfileComponent } from './Page/profile/profile.component';
 import { AuthGuard } from './Services/authGuard.service';
 import { MainComponent } from './Page/main/main.component';
 import { HeaderComponent } from './Page/header/header.component';
+import { Branch1Component } from './Page/branch1/branch1.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { HeaderComponent } from './Page/header/header.component';
     RegisterComponent,
     ProfileComponent,
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    Branch1Component,
   ],
   imports: [
     BrowserModule,
@@ -41,4 +44,4 @@ import { HeaderComponent } from './Page/header/header.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

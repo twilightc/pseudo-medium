@@ -1,0 +1,41 @@
+.branch-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
+    .author{
+        width: 100%;
+        max-width: 728px;
+    
+        .title{
+            font-family: medium-content-title-font, Georgia, Cambria, "Times New Roman", Times, serif;
+            color: rgba(0,0,0,0.84);
+        }
+        
+        .subtitle{
+            font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+            color: rgba(0,0,0,0.54);
+        }
+
+        .example-card {
+            max-width: 400px;
+
+            .example-header-image {
+                background-image: url('https://i.imgur.com/x2AHZiy.png');
+                background-size: cover;
+            }
+        }
+    }
+
+    .main-picture{
+        max-width: 800px;
+        background-image:  url('https://i.imgur.com/q1tAa7k.jpg');
+        
+    }
+}
+
+
+
+
+
