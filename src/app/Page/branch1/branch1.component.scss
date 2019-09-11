@@ -1,41 +1,63 @@
-.branch-container{
+$subtitle-color: rgba(0, 0, 0, 0.54);
+.branch-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+
+  .author-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
 
-    .author{
-        width: 100%;
-        max-width: 728px;
-    
-        .title{
-            font-family: medium-content-title-font, Georgia, Cambria, "Times New Roman", Times, serif;
-            color: rgba(0,0,0,0.84);
-        }
-        
-        .subtitle{
-            font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
-            color: rgba(0,0,0,0.54);
-        }
+    .author {
+      width: 100%;
+      max-width: 728px;
+      margin: 20px;
 
-        .example-card {
-            max-width: 400px;
+      .title {
+        font-family: medium-content-title-font, Georgia, Cambria,
+          'Times New Roman', Times, serif;
+        color: rgba(0, 0, 0, 0.84);
+      }
 
-            .example-header-image {
-                background-image: url('https://i.imgur.com/x2AHZiy.png');
-                background-size: cover;
-            }
+      .subtitle {
+        font-family: medium-content-sans-serif-font, 'Lucida Grande',
+          'Lucida Sans Unicode', 'Lucida Sans', Geneva, Arial, sans-serif;
+        color: $subtitle-color;
+      }
+
+      .example-card {
+        max-width: 400px;
+
+        .example-header-image {
+          background-image: url('https://i.imgur.com/x2AHZiy.png');
+          background-size: cover;
         }
+      }
     }
+  }
 
-    .main-picture{
-        max-width: 800px;
-        background-image:  url('https://i.imgur.com/q1tAa7k.jpg');
-        
-    }
+  .article-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-picture {
+    width: 100%;
+    max-width: 1200px;
+  }
+  .picture-subtitle {
+    color: $subtitle-color;
+  }
+  .mw728 {
+    max-width: 728px;
+  }
+  .w100 {
+    width: 100%;
+  }
 }
-
-
-
-
-

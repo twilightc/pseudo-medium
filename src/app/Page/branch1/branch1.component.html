@@ -1,21 +1,67 @@
 <div class="branch-container">
+  <div class="author-container">
     <div class="author">
-        <div>
-            <h1 class="title">Angular, you piped and observabled me.</h1>
-            <p class="subtitle">Every cloud has a sliver lining.</p>
-        </div>
-        <div>
-            <mat-card class="example-card">
-                <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>TyChang</mat-card-title>
-                    <mat-card-subtitle>Sep 10</mat-card-subtitle>
-                </mat-card-header>
-
-            </mat-card>
-        </div>
+      <div>
+        <h1 class="title">Angular, you piped and observabled me.</h1>
+        <p class="subtitle">Every cloud has a sliver lining.</p>
+      </div>
+      <div>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>TyChang</mat-card-title>
+            <mat-card-subtitle>Sep 10</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
     </div>
+  </div>
+  <div class="article-container">
     <div>
-        <div class="main-picture"></div>
+      <img class="main-picture" src="https://i.imgur.com/q1tAa7k.jpg" />
     </div>
+    <div class="picture-subtitle">
+      <p>
+        Use rxjs operators generally to make your thinking more functionally and
+        reactively.
+      </p>
+    </div>
+    <div class="mw728 w100">
+      <p>
+        Not everything is an object. When it comes to functional programming,
+        it’s more to do with the processes that get you from point A to point B
+        than how data and groups of business logic are structured. JavaScript is
+        a language that’s prone to imperative patterns because of how easy it is
+        to pick up. A lot of developers tend to write their code in a procedural
+        manner — where one blip in the procedure can break the code or create
+        side-effect bugs. This is where functional patterns come in. The Quick
+        Lowdown on Functional Programming A lot of smelly JavaScript code is
+        written in an imperative or procedural pattern. This is code that’s
+        written in a way that represents a flow of thought, resulting in a
+        series of dependencies for the chain to work. Take a look at the
+        procedural model below:
+        <!--  -->
+        Start. Check computer power status if on, proceed to next step. Else
+        proceed to turn computer on. Enter password. If password accepted,
+        proceed. Else try again. Open browser. Start browsing the Internet. End.
+        <!--  -->
+        Each step in the process needs to be done in order for the final outcome
+        to occur. For some circumstances, a procedural pattern is necessary but
+        it’s not required for all scenarios. There are some scenarios where the
+        order doesn’t matter as much. For example, the task of making instant
+        coffee. It doesn’t matter in which order you put in the sugar and coffee
+        powder — as long as it’s in the mug. That’s what functional programming
+        is in a nutshell. In JavaScript, we often work with arrays but a lot of
+        developers tend to use an imperative pattern when it’s not necessary.
+        while and for loops may be used to filter, find or do something to each
+        value inside the array. However, if something goes wrong, the process
+        hasn’t finished running, or the flow somehow breaks, the functions that
+        depend on correct values will also break as a side effect. filter(),
+        find(), map(), reduce(), every() and some() are six JavaScript array
+        methods that should be used more often to prevent such blips from
+        occurring. These methods are fantastic to use and read in code because
+        they don’t require a state to exist to work.
+      </p>
+    </div>
+  </div>
 </div>

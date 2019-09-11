@@ -1,0 +1,43 @@
+.df {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.title-field {
+  width: 600px;
+}
+
+.editor {
+  width: 100%;
+  max-width: 600px;
+}
+
+:host ::ng-deep .ck-editor__editable_inline {
+  min-height: 250px;
+}
+
+.story-field {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .submit {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+
+    .publish {
+      color: #03a87c;
+      border: 1px solid #03a87c;
+    }
+  }
+}

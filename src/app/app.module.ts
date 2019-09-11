@@ -12,9 +12,11 @@ import { RegisterComponent } from './Page/register/register.component';
 import { ProfileComponent } from './Page/profile/profile.component';
 import { AuthGuard } from './Services/authGuard.service';
 import { MainComponent } from './Page/main/main.component';
-import { HeaderComponent } from './Page/header/header.component';
+import { HeaderComponent } from './Components/header/header.component';
 import { Branch1Component } from './Page/branch1/branch1.component';
-
+import { NewStoryComponent } from './Page/new-story/new-story.component';
+import { LeftMenuComponent } from './Components/left-menu/left-menu.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { Branch1Component } from './Page/branch1/branch1.component';
     MainComponent,
     HeaderComponent,
     Branch1Component,
+    NewStoryComponent,
+    LeftMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,8 @@ import { Branch1Component } from './Page/branch1/branch1.component';
     BrowserAnimationsModule,
     FormsModule,
     ShareMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    CKEditorModule
   ],
   providers: [
     AuthGuard,
@@ -44,4 +49,4 @@ import { Branch1Component } from './Page/branch1/branch1.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
