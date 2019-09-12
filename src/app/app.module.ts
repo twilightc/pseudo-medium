@@ -17,6 +17,7 @@ import { Branch1Component } from './Page/branch1/branch1.component';
 import { NewStoryComponent } from './Page/new-story/new-story.component';
 import { LeftMenuComponent } from './Components/left-menu/left-menu.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { YourstoryComponent } from './Page/yourstory/yourstory.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     HeaderComponent,
     Branch1Component,
     NewStoryComponent,
-    LeftMenuComponent
+    LeftMenuComponent,
+    YourstoryComponent
   ],
   imports: [
     BrowserModule,

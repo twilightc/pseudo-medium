@@ -1,0 +1,21 @@
+.root {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+}
+
+.claps-field {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.bookmark-field {
+  padding: 5px;
+}
+
+// .show{
+//   will-change: opacity;
+// }

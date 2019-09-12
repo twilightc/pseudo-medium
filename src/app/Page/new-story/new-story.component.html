@@ -5,15 +5,15 @@
         matInput
         type="text"
         placeholder="Your Article Title"
-        [(ngModel)]="titlevalue"
+        [(ngModel)]="ArticleModel.ArticleTitle"
       />
       <button
         mat-button
-        *ngIf="titlevalue"
+        *ngIf="ArticleModel.ArticleTitle"
         matSuffix
         mat-icon-button
         aria-label="Clear"
-        (click)="titlevalue = ''"
+        (click)="ArticleModel.ArticleTitle = ''"
       >
         <mat-icon>close</mat-icon>
       </button>
@@ -23,11 +23,11 @@
     <ckeditor
       [editor]="Editor"
       [config]="config"
-      [(ngModel)]="article.text"
+      [(ngModel)]="ArticleModel.ArticleContent"
     ></ckeditor>
   </div>
   <div class="submit">
-    <button mat-stroked-button class="publish">
+    <button mat-stroked-button class="publish" (click)="publish()">
       Ready to publish?
     </button>
   </div>

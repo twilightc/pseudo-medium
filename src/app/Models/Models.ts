@@ -10,6 +10,11 @@ export class AccountModel {
   Password = '';
 }
 
+export class ArticleModel {
+  ArticleTitle = '';
+  ArticleContent = '';
+}
+
 export class BaseResponse<T> {
   success: boolean;
   msg: string;

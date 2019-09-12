@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RegisterModel, BaseResponse, AccountModel } from '../Models/Models';
+import {
+  RegisterModel,
+  BaseResponse,
+  AccountModel,
+  ArticleModel
+} from '../Models/Models';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -20,6 +25,15 @@ export class UserService {
   Login(model: AccountModel) {
     return this.httpclient.post<BaseResponse<string>>(
       `${environment.apiUrl}Auth/Login`,
+      model
+    );
+  }
+
+  Publish(model: ArticleModel) {
+    console.log(`​${environment.apiUrl}Story​/Publish`);
+
+    return this.httpclient.post<BaseResponse<string>>(
+      `${environment.apiUrl}Story/Publish`,
       model
     );
   }
