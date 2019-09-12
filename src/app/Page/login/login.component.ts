@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       if (response.success) {
         this.loginservice.isLoggedIn = true;
         localStorage.setItem('token', response.data);
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/yourstory']);
       } else {
         this.router.navigate(['/login']);
       }
