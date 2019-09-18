@@ -1,12 +1,29 @@
 <div class="header">
-  <div class="headertitle">
+  <div class="headertitle" (click)="toMain()">
     <p>PseudoMedium</p>
   </div>
   <div class="headerbtn">
     <button mat-icon-button color="primary">
       <mat-icon>search</mat-icon>
     </button>
-    <button mat-button>Sign In</button>
-    <button mat-stroked-button color="primary">Get Started</button>
+    <button mat-button (click)="toLogin()" *ngIf="!userservice.isLoggedIn">
+      <!-- *ngIf="!userservice.isLoggedIn" -->
+      Sign In
+    </button>
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="toRegister()"
+      *ngIf="!userservice.isLoggedIn"
+    >
+      Get Started
+    </button>
+    <button
+      mat-stroked-button
+      *ngIf="userservice.isLoggedIn"
+      (click)="Logout()"
+    >
+      LogOut
+    </button>
   </div>
 </div>

@@ -9,6 +9,7 @@ import { NewStoryComponent } from './Page/new-story/new-story.component';
 import { YourstoryComponent } from './Page/yourstory/yourstory.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'branch1', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'branch1', component: Branch1Component },

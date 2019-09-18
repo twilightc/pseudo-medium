@@ -1,7 +1,9 @@
 <div>
   <app-header class="app-header"></app-header>
-  <!-- <div class="article-field"> -->
-  <app-left-menu></app-left-menu>
-  <router-outlet></router-outlet>
-  <!-- </div> -->
+  <div class="article-field">
+    <app-left-menu></app-left-menu>
+    <div class="article-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

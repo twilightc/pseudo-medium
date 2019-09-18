@@ -6,6 +6,8 @@ import { MatInputModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatInputModule,
     MatIconModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDividerModule,
+    MatListModule
   ],
   exports: [
     MatButtonModule,
@@ -23,7 +27,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatInputModule,
     MatIconModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDividerModule,
+    MatListModule
   ]
 })
 export class ShareMaterialModule {}

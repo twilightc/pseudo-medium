@@ -4,32 +4,35 @@ $base-color: #03a87c;
   color: $base-color;
 }
 
-.root {
+:host {
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+}
 
-  .palm {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.titlefont {
+  color: rgba(0, 0, 0, 0.84);
+  font-family: medium-content-sans-serif-font, 'Lucida Grande',
+    'Lucida Sans Unicode', 'Lucida Sans', Geneva, Arial, sans-serif;
+}
 
-    .titlefont {
-      color: rgba(0, 0, 0, 0.84);
-      font-family: medium-content-sans-serif-font, 'Lucida Grande',
-        'Lucida Sans Unicode', 'Lucida Sans', Geneva, Arial, sans-serif;
-    }
+.title {
+  width: 100%;
+  margin-top: 20px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-    .title {
-      width: 100%;
-      max-width: 1000px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-
-      .m3 {
-        margin: 3px;
-      }
-    }
+  .m3 {
+    margin: 3px;
   }
+}
+
+.navigation {
+  width: 100%;
+  max-width: 1000px;
 }

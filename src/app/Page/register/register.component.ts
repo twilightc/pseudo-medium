@@ -16,14 +16,9 @@ export class RegisterComponent implements OnInit {
 
   register(): void {
     this.registerservice.Register(this.RegisterModel).subscribe(response => {
-      // console.log('x:', response);
-      // console.log('x:', response.success);
-      if (response.success) {
-        // console.log('yyyyyy');
+      if (response.Success) {
         this.registerservice.isLoggedIn = true;
-        localStorage.setItem('token', response.data);
-        // UserService.JWTToken = response.data;
-        // console.log(UserService.JWTToken);
+        localStorage.setItem('token', response.Data);
         this.router.navigate(['/login']);
       } else {
         console.log('register failed');

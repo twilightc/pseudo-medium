@@ -16,7 +16,15 @@ export class ArticleModel {
 }
 
 export class BaseResponse<T> {
-  success: boolean;
-  msg: string;
-  data: T;
+  Success: boolean;
+  Msg: string;
+  Data: T;
+}
+
+export class Article {
+  ArticleTitle: string;
+  ArticleContent: string;
+  Account: string;
+  Uid: string;
+  Date: Date;
 }
