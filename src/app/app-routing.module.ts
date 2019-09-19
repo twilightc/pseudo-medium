@@ -7,6 +7,7 @@ import { AuthGuard } from './Services/authGuard.service';
 import { Branch1Component } from './Page/branch1/branch1.component';
 import { NewStoryComponent } from './Page/new-story/new-story.component';
 import { YourstoryComponent } from './Page/yourstory/yourstory.component';
+import { BeingreadStoryComponent } from './Page/beingread-story/beingread-story.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'branch1', pathMatch: 'full' },
@@ -15,6 +16,11 @@ const routes: Routes = [
   { path: 'branch1', component: Branch1Component },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'newstory', component: NewStoryComponent, canActivate: [AuthGuard] },
+  {
+    path: 'beingreadstory',
+    component: BeingreadStoryComponent,
+    canActivate: [AuthGuard]
+  },
   {
     path: 'yourstory',
     component: YourstoryComponent,

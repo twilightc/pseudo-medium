@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class YourstoryComponent implements OnInit {
   public articleList = new Array<Article>();
-
+  public articleContent: string;
   constructor(private articleservice: ArticleService, private router: Router) {}
 
   ngOnInit() {
@@ -24,7 +24,16 @@ export class YourstoryComponent implements OnInit {
     });
   }
 
+  transPureString(content: string) {
+    return content.replace(/<[^>]*>/g, '');
+  }
+
   toNewStory() {
     this.router.navigate(['newstory']);
+  }
+
+  toBeingReadStory(articleDate: Article) {
+    this.articleservice.storyBeingRead = articleDate;
+    this.router.navigate(['beingreadstory']);
   }
 }

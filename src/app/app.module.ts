@@ -18,6 +18,7 @@ import { NewStoryComponent } from './Page/new-story/new-story.component';
 import { LeftMenuComponent } from './Components/left-menu/left-menu.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { YourstoryComponent } from './Page/yourstory/yourstory.component';
+import { BeingreadStoryComponent } from './Page/beingread-story/beingread-story.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { YourstoryComponent } from './Page/yourstory/yourstory.component';
     Branch1Component,
     NewStoryComponent,
     LeftMenuComponent,
-    YourstoryComponent
+    YourstoryComponent,
+    BeingreadStoryComponent
   ],
   imports: [
     BrowserModule,

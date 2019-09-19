@@ -15,10 +15,17 @@
     </mat-tab>
     <mat-tab label="Published">
       <mat-list *ngFor="let article of articleList">
-        <mat-list-item>{{ article.ArticleTitle }}</mat-list-item>
+        <mat-list-item>
+          <a
+            [routerLink]=""
+            (click)="toBeingReadStory(article)"
+            style="color:#000000; text-decoration: none;"
+            >{{ article.ArticleTitle }}</a
+          >
+        </mat-list-item>
         <mat-list-item
-          ><div [innerHtml]="article.ArticleContent">
-            {{ article.ArticleContent }}
+          ><div>
+            {{ transPureString(article.ArticleContent) }}
           </div></mat-list-item
         >
         <mat-divider></mat-divider>

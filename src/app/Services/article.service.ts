@@ -7,6 +7,8 @@ import { BaseResponse, Article } from '../Models/Models';
   providedIn: 'root'
 })
 export class ArticleService {
+  storyBeingRead: Article;
+
   constructor(private httpclient: HttpClient) {}
 
   getArticles() {
