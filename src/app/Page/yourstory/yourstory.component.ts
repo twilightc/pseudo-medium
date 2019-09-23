@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/Services/article.service';
-import { Article } from 'src/app/Models/Models';
+import { Article, ArticleModel } from 'src/app/Models/Models';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -35,5 +35,10 @@ export class YourstoryComponent implements OnInit {
   toBeingReadStory(articleDate: Article) {
     this.articleservice.storyBeingRead = articleDate;
     this.router.navigate(['beingreadstory']);
+  }
+
+  editArticle(article: Article) {
+    this.articleservice.storybeingEdited = article;
+    this.router.navigate(['newstory']);
   }
 }

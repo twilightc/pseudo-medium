@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { UserService } from 'src/app/Services/user.service';
-import { ArticleModel } from 'src/app/Models/Models';
+import { ArticleModel, Article } from 'src/app/Models/Models';
 import { Router } from '@angular/router';
+import { ArticleService } from 'src/app/Services/article.service';
 
 @Component({
   selector: 'app-new-story',
@@ -15,10 +16,19 @@ export class NewStoryComponent implements OnInit {
     placeholder: 'Tell your story...'
   };
   ArticleModel = new ArticleModel();
+  BeingEditedArticle = new Article();
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private articleservice: ArticleService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.articleservice.storybeingEdited !== null) {
+      this.BeingEditedArticle = this.articleservice.storybeingEdited;
+    }
+  }
 
   publish() {
     this.userService.Publish(this.ArticleModel).subscribe(response => {
@@ -27,5 +37,17 @@ export class NewStoryComponent implements OnInit {
         this.router.navigate(['yourstory']);
       }
     });
+  }
+
+  editFinish() {
+    this.articleservice
+      .editArticle(this.BeingEditedArticle)
+      .subscribe(response => {
+        if (response.Success) {
+          console.log(response.Data);
+          this.BeingEditedArticle.Uid = '';
+          this.router.navigate(['yourstory']);
+        }
+      });
   }
 }

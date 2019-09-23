@@ -14,4 +14,14 @@ export class BeingreadStoryComponent implements OnInit {
   ngOnInit() {
     this.currentReadArticle = this.articleservice.storyBeingRead;
   }
+
+  edit() {
+    this.articleservice
+      .editArticle(this.currentReadArticle)
+      .subscribe(response => {
+        if (response.Success) {
+          console.log(response.Data);
+        }
+      });
+  }
 }

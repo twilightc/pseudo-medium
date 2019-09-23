@@ -2,6 +2,7 @@
   <div class="title-field">
     <mat-form-field>
       <input
+        *ngIf="BeingEditedArticle.Uid === ''"
         matInput
         type="text"
         placeholder="Your Article Title"
@@ -9,7 +10,7 @@
       />
       <button
         mat-button
-        *ngIf="ArticleModel.ArticleTitle"
+        *ngIf="ArticleModel.ArticleTitle && BeingEditedArticle.Uid === ''"
         matSuffix
         mat-icon-button
         aria-label="Clear"
@@ -17,18 +18,55 @@
       >
         <mat-icon>close</mat-icon>
       </button>
+      <input
+        *ngIf="BeingEditedArticle.Uid !== ''"
+        matInput
+        type="text"
+        placeholder="Your Article Title"
+        [(ngModel)]="BeingEditedArticle.ArticleTitle"
+      />
+      <button
+        mat-button
+        *ngIf="BeingEditedArticle.Uid !== ''"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="BeingEditedArticle.ArticleTitle = ''"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
     </mat-form-field>
   </div>
   <div class="editor">
     <ckeditor
+      *ngIf="BeingEditedArticle.Uid === ''"
       [editor]="Editor"
       [config]="config"
       [(ngModel)]="ArticleModel.ArticleContent"
     ></ckeditor>
+    <ckeditor
+      *ngIf="BeingEditedArticle.Uid !== ''"
+      [editor]="Editor"
+      [config]="config"
+      [(ngModel)]="BeingEditedArticle.ArticleContent"
+    ></ckeditor>
   </div>
   <div class="submit">
-    <button mat-stroked-button class="publish" (click)="publish()">
+    <button
+      mat-stroked-button
+      *ngIf="BeingEditedArticle.Uid === ''"
+      class="publish"
+      (click)="publish()"
+    >
       Ready to publish?
+    </button>
+    <button
+      mat-stroked-button
+      *ngIf="BeingEditedArticle.Uid !== ''"
+      class="publish"
+      (click)="editFinish()"
+    >
+      Edit Finish?
     </button>
   </div>
 </div>

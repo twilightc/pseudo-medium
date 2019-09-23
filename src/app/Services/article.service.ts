@@ -8,6 +8,7 @@ import { BaseResponse, Article } from '../Models/Models';
 })
 export class ArticleService {
   storyBeingRead: Article;
+  storybeingEdited = new Article();
 
   constructor(private httpclient: HttpClient) {}
 
@@ -19,6 +20,12 @@ export class ArticleService {
   getMyArticles() {
     return this.httpclient.get<BaseResponse<Article[]>>(
       `${environment.apiUrl}Story/GetMyArticle`
+    );
+  }
+  editArticle(model: Article) {
+    return this.httpclient.put<BaseResponse<string>>(
+      `${environment.apiUrl}Story/EditArticle`,
+      model
     );
   }
 }
