@@ -28,4 +28,11 @@ export class ArticleService {
       model
     );
   }
+
+  deleteArticle(model: Article) {
+    return this.httpclient.post<BaseResponse<string>>(
+      `${environment.apiUrl}Story/DeleteArticle`,
+      model
+    );
+  }
 }

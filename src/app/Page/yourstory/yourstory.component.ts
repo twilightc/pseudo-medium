@@ -41,4 +41,15 @@ export class YourstoryComponent implements OnInit {
     this.articleservice.storybeingEdited = article;
     this.router.navigate(['newstory']);
   }
+
+  deleteArticle(article: Article) {
+    this.articleservice.deleteArticle(article).subscribe(response => {
+      console.log(response);
+      this.articleservice.getMyArticles().subscribe(renewRes => {
+        // console.log(renewRes);
+
+        this.articleList = renewRes.Data;
+      });
+    });
+  }
 }

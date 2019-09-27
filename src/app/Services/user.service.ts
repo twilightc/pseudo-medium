@@ -14,7 +14,7 @@ import { environment } from 'src/environments/environment';
 export class UserService {
   constructor(private httpclient: HttpClient) {}
   // public static JWTToken = '';
-  isLoggedIn = false;
+  isLoggedIn = localStorage.getItem('token') ? true : false;
   redirectUrl: string;
   Register(model: RegisterModel) {
     return this.httpclient.post<BaseResponse<string>>(
