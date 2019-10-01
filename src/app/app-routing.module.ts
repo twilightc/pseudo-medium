@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'newstory', component: NewStoryComponent, canActivate: [AuthGuard] },
   {
-    path: 'beingreadstory',
+    path: 'beingreadstory/:id',
     component: BeingreadStoryComponent,
     canActivate: [AuthGuard]
   },

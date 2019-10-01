@@ -25,10 +25,12 @@ export class YourstoryComponent implements OnInit {
   }
 
   transPureString(content: string) {
-    return content.replace(/<[^>]*>/g, '');
+    // let result = content.replace(/<[^>]*>/g, '').split("&")
+    return content.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, '');
   }
 
   toNewStory() {
+    this.articleservice.isNewStory = true;
     this.router.navigate(['newstory']);
   }
 
@@ -39,6 +41,7 @@ export class YourstoryComponent implements OnInit {
 
   editArticle(article: Article) {
     this.articleservice.storybeingEdited = article;
+    this.articleservice.isNewStory = false;
     this.router.navigate(['newstory']);
   }
 

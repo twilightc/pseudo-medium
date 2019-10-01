@@ -17,6 +17,7 @@ export class NewStoryComponent implements OnInit {
   };
   ArticleModel = new ArticleModel();
   BeingEditedArticle = new Article();
+  isNewStory = false;
 
   constructor(
     private userService: UserService,
@@ -27,6 +28,8 @@ export class NewStoryComponent implements OnInit {
   ngOnInit() {
     if (this.articleservice.storybeingEdited !== null) {
       this.BeingEditedArticle = this.articleservice.storybeingEdited;
+      this.isNewStory = this.articleservice.isNewStory;
+      console.log(this.BeingEditedArticle);
     }
   }
 

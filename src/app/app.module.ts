@@ -19,6 +19,7 @@ import { LeftMenuComponent } from './Components/left-menu/left-menu.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { YourstoryComponent } from './Page/yourstory/yourstory.component';
 import { BeingreadStoryComponent } from './Page/beingread-story/beingread-story.component';
+import { CountPublishTimePipe } from './Pipe/count-publish-time.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BeingreadStoryComponent } from './Page/beingread-story/beingread-story.
     NewStoryComponent,
     LeftMenuComponent,
     YourstoryComponent,
-    BeingreadStoryComponent
+    BeingreadStoryComponent,
+    CountPublishTimePipe
   ],
   imports: [
     BrowserModule,

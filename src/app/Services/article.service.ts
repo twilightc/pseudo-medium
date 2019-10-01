@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { BaseResponse, Article } from '../Models/Models';
 
@@ -9,6 +9,7 @@ import { BaseResponse, Article } from '../Models/Models';
 export class ArticleService {
   storyBeingRead: Article;
   storybeingEdited = new Article();
+  isNewStory = false;
 
   constructor(private httpclient: HttpClient) {}
 
@@ -22,6 +23,15 @@ export class ArticleService {
       `${environment.apiUrl}Story/GetMyArticle`
     );
   }
+
+  getMyArticleByUid(uid: string) {
+    console.log(uid);
+
+    return this.httpclient.get<BaseResponse<Article>>(
+      `${environment.apiUrl}Story/GetMyArticleByUid?uid=${uid}`
+    );
+  }
+
   editArticle(model: Article) {
     return this.httpclient.put<BaseResponse<string>>(
       `${environment.apiUrl}Story/EditArticle`,

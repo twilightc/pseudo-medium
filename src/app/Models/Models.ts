@@ -22,9 +22,9 @@ export class BaseResponse<T> {
 }
 
 export class Article {
-  ArticleTitle: string;
-  ArticleContent: string;
-  Account: string;
-  Uid: string;
+  ArticleTitle = '';
+  ArticleContent = '';
+  Account = '';
+  Uid = '';
   Date: Date;
 }

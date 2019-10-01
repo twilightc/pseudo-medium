@@ -6,7 +6,7 @@
         type="text"
         placeholder="Your Article Title"
         [(ngModel)]="
-          BeingEditedArticle.Uid === ''
+          isNewStory
             ? ArticleModel.ArticleTitle
             : BeingEditedArticle.ArticleTitle
         "
@@ -14,16 +14,19 @@
 
       <button
         mat-button
-        *ngIf="ArticleModel.ArticleTitle && BeingEditedArticle.Uid === ''"
         matSuffix
         mat-icon-button
         aria-label="Clear"
-        (click)="ArticleModel.ArticleTitle = ''"
+        (click)="
+          isNewStory
+            ? (ArticleModel.ArticleTitle = '')
+            : (BeingEditedArticle.ArticleTitle = '')
+        "
       >
         <mat-icon>close</mat-icon>
       </button>
 
-      <button
+      <!-- <button
         mat-button
         *ngIf="BeingEditedArticle.Uid !== ''"
         matSuffix
@@ -32,16 +35,15 @@
         (click)="BeingEditedArticle.ArticleTitle = ''"
       >
         <mat-icon>close</mat-icon>
-      </button>
+      </button> -->
     </mat-form-field>
   </div>
   <div class="editor">
     <ckeditor
-      *ngIf="BeingEditedArticle.Uid !== ''"
       [editor]="Editor"
       [config]="config"
       [(ngModel)]="
-        BeingEditedArticle.Uid === ''
+        isNewStory
           ? ArticleModel.ArticleContent
           : BeingEditedArticle.ArticleContent
       "
@@ -50,7 +52,7 @@
   <div class="submit">
     <button
       mat-stroked-button
-      *ngIf="BeingEditedArticle.Uid === ''"
+      *ngIf="isNewStory"
       class="publish"
       (click)="publish()"
     >
@@ -58,7 +60,7 @@
     </button>
     <button
       mat-stroked-button
-      *ngIf="BeingEditedArticle.Uid !== ''"
+      *ngIf="!isNewStory"
       class="publish"
       (click)="editFinish()"
     >
